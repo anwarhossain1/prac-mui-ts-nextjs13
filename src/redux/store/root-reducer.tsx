@@ -1,16 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-    themeMode: ''
-  };
+import { combineReducers } from '@reduxjs/toolkit';
+import { reducer as themeModeReducer } from '../slices/themeChange';
 
-  const slice = createSlice({
-    name:'theme-mode',
-    initialState,
-    reducers:{
-        setThemeMode(state, action){
-            state.themeMode = action.payload
-        }
-    }
-  })
-  export const { reducer } = slice;
+export const rootReducer = combineReducers({
+  themeMode: themeModeReducer
+});
