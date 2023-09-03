@@ -49,11 +49,15 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     },
   }));
 const CustomSwitch = () => {
+    const handleChange = (e:React.SyntheticEvent<EventTarget>)=>{
+console.log(e)
+    }
   return (
     <FormGroup>
       <FormControlLabel
         control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
         label="Dark"
+        onChange={handleChange}
       />
    </FormGroup>
   )
