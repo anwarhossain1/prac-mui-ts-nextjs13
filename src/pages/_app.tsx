@@ -17,7 +17,7 @@ const  MyApp = (props : any) => {
       })}
     >
         {getLayout(<Component {...pageProps} />)}
-    </ThemeProvider>
+         </ThemeProvider>
         </CacheProvider>    
   );
 }

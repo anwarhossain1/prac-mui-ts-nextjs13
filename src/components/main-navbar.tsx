@@ -1,5 +1,7 @@
 import React from 'react'
-import { AppBar, Container, Toolbar, Typography } from '@mui/material'
+import { AppBar, Container, Stack, Toolbar, Typography } from '@mui/material'
+import CustomSwitch from './CustomSwitch'
+import {CustomStackFullWidth} from '../styled/CustomStacks'
 const MainNavbar = () => {
   return (
     <AppBar
@@ -17,9 +19,14 @@ const MainNavbar = () => {
         disableGutters
         sx={{ minHeight: 64 }}
       >
-       <Typography>
+        <CustomStackFullWidth direction='row' alignItems='center' justifyContent='space-between'>
+        <Typography>
        Test
        </Typography>
+       <CustomSwitch/>
+        </CustomStackFullWidth>
+    
+      
       </Toolbar>
     </Container>
   </AppBar>
