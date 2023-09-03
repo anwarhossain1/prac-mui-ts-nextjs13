@@ -1,6 +1,5 @@
 import { ThemeProvider } from "@mui/material/styles";
 import { CacheProvider } from '@emotion/react';
-import type { AppProps } from "next/app";
 import { createTheme } from "../theme";
 import { createEmotionCache } from '../utils/create-emotion-cache';
 const clientSideEmotionCache = createEmotionCache();
@@ -11,9 +10,9 @@ const  MyApp = (props : any) => {
   return (
     <CacheProvider value={emotionCache}>
         <ThemeProvider
-      theme={createTheme({
+        theme={createTheme({
         direction: "ltr",
-        //   responsiveFontSizes: settings.responsiveFontSizes,
+        responsiveFontSizes:true,
         mode: "light",
       })}
     >
