@@ -2,7 +2,20 @@ import React from 'react'
 import { AppBar, Container, Stack, Toolbar, Typography } from '@mui/material'
 import CustomSwitch from './CustomSwitch'
 import {CustomStackFullWidth} from '../styled/CustomStacks'
+import { useDispatch, useSelector } from '../redux/store/store'
+import {setThemeMode} from '../redux/slices/themeChange'
 const MainNavbar = () => {
+  const { themeMode} = useSelector((state:any)=>state.themeMode)
+  const dispatch = useDispatch()
+  const isChecked = themeMode==='dark' ? true : false
+  const handleThemeMode = (e)=>{
+    if(e.target.checked){
+dispatch(setThemeMode('dark'))
+    }
+    else{
+      dispatch(setThemeMode('light'))
+    }
+  }
   return (
     <AppBar
     elevation={0}
@@ -23,10 +36,8 @@ const MainNavbar = () => {
         <Typography>
        Test
        </Typography>
-       <CustomSwitch/>
+    <CustomSwitch handleChange={handleThemeMode} isChecked={isChecked}/>
         </CustomStackFullWidth>
-    
-      
       </Toolbar>
     </Container>
   </AppBar>
