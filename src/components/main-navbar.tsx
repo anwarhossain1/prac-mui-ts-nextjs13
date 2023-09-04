@@ -8,7 +8,7 @@ const MainNavbar = () => {
   const { themeMode} = useSelector((state:any)=>state.themeMode)
   const dispatch = useDispatch()
   const isChecked = themeMode==='dark' ? true : false
-  const handleThemeMode = (e)=>{
+  const handleThemeMode = (e:any)=>{
     if(e.target.checked){
 dispatch(setThemeMode('dark'))
     }

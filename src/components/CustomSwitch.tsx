@@ -48,8 +48,12 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
       borderRadius: 20 / 2,
     },
   }));
-const CustomSwitch = ({handleChange, isChecked}) => {
-   
+  interface CustomSwitchPropsCheck {
+    handleChange:(e:any)=>void ;
+    isChecked:boolean;
+  }
+const CustomSwitch = ( props : CustomSwitchPropsCheck  ) => {
+  const {handleChange, isChecked} = props
   return (
     <FormGroup>
       <FormControlLabel
