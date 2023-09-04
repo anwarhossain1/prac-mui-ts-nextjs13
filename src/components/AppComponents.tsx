@@ -5,7 +5,6 @@ import { useSelector } from '../redux/store/store';
 import {createTheme} from '../theme'
 const AppComponents = ({getLayout,Component,pageProps } : any) => {
     const { themeMode} = useSelector((state:any)=>state.themeMode)
-    console.log(themeMode)
     const theme = createTheme({
         direction: 'ltr',
         responsiveFontSizes: true,
